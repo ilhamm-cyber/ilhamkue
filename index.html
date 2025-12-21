@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rollin Bakery</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bakery-cream": "#FFF8F0",
+              "bakery-brown": "#3E2723",
+              "bakery-dark": "#2D1B18",
+              "bakery-yellow": "#FDD835",
+              "bakery-purple": "#5E35B1",
+            },
+            fontFamily: {
+              sans: ["Fredoka", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Agar scroll halus saat klik menu */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
+  <body class="bg-bakery-cream font-sans text-bakery-brown">
+    <!--Navbar start-->
+    <header
+      class="w-full border-b-2 border-orange-200 bg-bakery-cream sticky top-0 z-50"
+    >
+      <nav
+        class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto"
+      >
+        <div class="text-2xl font-bold text-bakery-dark">
+          hiruppiwcookk<span class="text-orange-500">.</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 font-medium">
+          <a href="#home" class="hover:text-orange-500 transition">Cake</a>
+          <a href="#bakery" class="hover:text-orange-500 transition">Bakery</a>
+          <a href="#menu" class="hover:text-orange-500 transition">Menu</a>
+          <a href="#about" class="hover:text-orange-500 transition">About us</a>
+          <a href="#contact" class="hover:text-orange-500 transition"
+            >Contact</a
+          >
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="bg-bakery-yellow px-5 py-2 rounded-full font-bold shadow-md hover:bg-yellow-400 transition text-sm md:text-base"
+          >
+            Start Baking
+          </button>
+
+          <button
+            id="hamburger-btn"
+            class="md:hidden bg-white p-2 rounded-full shadow-sm text-bakery-dark hover:bg-gray-100 transition border border-gray-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      id="mobile-menu"
+      class="fixed top-0 right-0 h-full w-64 bg-white z-50 flex flex-col shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="flex justify-end p-6">
+        <button
+          id="close-btn"
+          class="p-2 text-gray-500 hover:text-orange-500 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-8 w-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div
+        class="flex flex-col items-center space-y-8 text-xl font-bold text-bakery-dark mt-4"
+      >
+        <a href="#home" class="mobile-link hover:text-orange-500 transition"
+          >Cake</a
+        >
+        <a href="#bakery" class="mobile-link hover:text-orange-500 transition"
+          >Bakery</a
+        >
+        <a href="#menu" class="mobile-link hover:text-orange-500 transition"
+          >Menu</a
+        >
+        <a href="#about" class="mobile-link hover:text-orange-500 transition"
+          >About us</a
+        >
+        <a
+          href="#contact"
+          class="mobile-link hover:text-orange-500 transition transform-scaleX-(0.)"
+          >Contact</a
+        >
+      </div>
+    </div>
+
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"
+    ></div>
+    <!--Navbar end -->
+
+    <!--cake start-->
+    <section id="home" class="px-6 py-10 max-w-7xl mx-auto">
+      <div
+        class="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative overflow-hidden"
+      >
+        <div class="z-10 order-2 md:order-1">
+          <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+            BAKE THE
+            <span
+              class="text-green-600 bg-green-100 px-2 rounded-lg text-4xl align-middle rotate-3 inline-block"
+              >TASTY</span
+            ><br />
+            COOKIES
+          </h1>
+          <p class="text-lg mb-8 text-gray-600">
+            Premium bread and cookies made from scratch. Kami terobsesi
+            memberikan rasa terbaik untuk kamu!
+          </p>
+          <div class="flex gap-4">
+            <button
+              class="bg-bakery-yellow px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition"
+            >
+              Order Now
+            </button>
+            <button
+              class="flex items-center font-bold px-6 py-3 hover:underline"
+            >
+              Cooking Blog >
+            </button>
+          </div>
+        </div>
+
+        <div class="order-1 md:order-2 flex justify-center relative">
+          <div
+            class="bg-bakery-yellow rounded-tr-[4rem] rounded-bl-[4rem] w-full h-64 md:h-96 flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              alt="Bread"
+              class="object-cover w-full h-full mix-blend-multiply"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--cake end-->
+
+    <!--Bakery start-->
+    <section id="bakery" class="px-6 py-10 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="bg-blue-50 rounded-[2rem] p-10 flex justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Croissant"
+            class="rounded-xl shadow-xl w-64 md:w-80 rotate-6"
+          />
+        </div>
+
+        <div>
+          <h2 class="text-4xl font-bold mb-4">YOUR ONLY DOSE OF DELIGHT</h2>
+          <div class="flex items-center gap-4 mb-4">
+            <span class="font-bold text-xl">Bagel Buns</span>
+            <span class="bg-gray-200 px-2 py-1 text-xs rounded"
+              >Gluten Free</span
+            >
+            <span class="text-2xl font-bold">$16</span>
+          </div>
+          <p class="text-gray-600 mb-6">
+            Semua kue kami memiliki sentuhan handmade yang otentik. Salah satu
+            favorit di menu kami.
+          </p>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-gray-800 text-white px-3 py-1 rounded-full text-sm"
+              >Cookies 12</span
+            >
+            <span
+              class="bg-blue-200 text-blue-900 px-3 py-1 rounded-full text-sm"
+              >Cake 27</span
+            >
+            <span
+              class="bg-orange-200 text-orange-900 px-3 py-1 rounded-full text-sm"
+              >Croissant 31</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Bakery end-->
+
+    <!--menu start-->
+    <section id="menu" class="py-20 px-6 max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-serif font-bold mb-4 text-bake-dark">
+          Sweet Favorites
+        </h2>
+        <p class="text-gray-600">
+          Pilihan terfavorit yang paling dicintai pelanggan kami.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="group bg-white p-4 rounded-[2rem] hover:shadow-xl transition duration-300 border border-transparent hover:border-bake-peach"
+        >
+          <div class="h-64 overflow-hidden rounded-[1.5rem] mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              alt="Cake"
+            />
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-xl font-bold font-serif text-bake-dark">
+                Berry Delight
+              </h3>
+              <span class="font-bold text-bake-red">$25.00</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">
+              Fresh berries, vanilla cream, sponge cake.
+            </p>
+            <button
+              class="w-full py-3 rounded-xl border border-bake-dark/10 font-semibold hover:bg-bake-dark hover:text-white transition"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white p-4 rounded-[2rem] hover:shadow-xl transition duration-300 border border-transparent hover:border-bake-peach"
+        >
+          <div class="h-64 overflow-hidden rounded-[1.5rem] mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              alt="Cupcake"
+            />
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-xl font-bold font-serif text-bake-dark">
+                Choco Muffin
+              </h3>
+              <span class="font-bold text-bake-red">$12.00</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">
+              Dark chocolate, sea salt, fluffy texture.
+            </p>
+            <button
+              class="w-full py-3 rounded-xl border border-bake-dark/10 font-semibold hover:bg-bake-dark hover:text-white transition"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="group bg-white p-4 rounded-[2rem] hover:shadow-xl transition duration-300 border border-transparent hover:border-bake-peach"
+        >
+          <div class="h-64 overflow-hidden rounded-[1.5rem] mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+              class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+              alt="Donut"
+            />
+          </div>
+          <div class="px-2 pb-4">
+            <div class="flex justify-between items-center mb-2">
+              <h3 class="text-xl font-bold font-serif text-bake-dark">
+                Glazed Donut
+              </h3>
+              <span class="font-bold text-bake-red">$8.50</span>
+            </div>
+            <p class="text-gray-500 text-sm mb-4">
+              Classic glaze, soft dough, sprinkles.
+            </p>
+            <button
+              class="w-full py-3 rounded-xl border border-bake-dark/10 font-semibold hover:bg-bake-dark hover:text-white transition"
+            >
+              Add to Cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--menu end-->
+
+    <!--about start-->
+    <section id="about" class="px-6 py-10 max-w-7xl mx-auto">
+      <div
+        class="bg-bakery-dark text-white rounded-[3rem] p-8 md:p-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      >
+        <div>
+          <img
+            src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+            alt="Baker"
+            class="rounded-3xl w-full object-cover h-64 md:h-80 opacity-90"
+          />
+        </div>
+
+        <div>
+          <div class="text-orange-400 text-4xl mb-4">
+            Why Is Baking Considered As Art Form?
+          </div>
+          <p class="text-gray-300 mb-6 leading-relaxed">
+            Membutuhkan kesabaran, presisi, dan kreativitas. Ini lebih dari
+            sekadar makanan, ini adalah pengalaman rasa dan visual.
+          </p>
+          <button
+            class="bg-bakery-yellow text-bakery-dark px-6 py-2 rounded-full font-bold hover:bg-white transition"
+          >
+            Read Story
+          </button>
+        </div>
+      </div>
+    </section>
+    <!--about end-->
+
+    <!--contact start-->
+    <section id="contact" class="px-6 py-10 max-w-7xl mx-auto">
+      <div
+        class="bg-white rounded-[3rem] p-8 md:p-16 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+      >
+        <div>
+          <span
+            class="text-orange-500 font-bold tracking-widest uppercase text-sm mb-2 block"
+            >Get in Touch</span
+          >
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-bakery-dark">
+            LET'S TALK ABOUT <br />
+            <span class="text-bakery-purple">SWEET THINGS</span>
+          </h2>
+          <p class="text-gray-600 mb-8 text-lg">
+            Punya pertanyaan tentang menu catering, pesanan khusus, atau sekadar
+            ingin menyapa? Kami siap mendengarkan!
+          </p>
+
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="bg-bakery-yellow p-3 rounded-full text-bakery-dark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </div>
+              <span class="font-bold text-lg">+62 812 3456 7890</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="bg-bakery-yellow p-3 rounded-full text-bakery-dark">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <span class="font-bold text-lg">hello@rollinbakery.com</span>
+            </div>
+          </div>
+        </div>
+
+        <form
+          class="bg-gray-50 p-6 md:p-8 rounded-[2rem] border border-gray-100 w-full"
+        >
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2 ml-2">Nama Kamu</label>
+            <input
+              type="text"
+              placeholder="Misal: Budi Santoso"
+              class="w-full px-6 py-4 rounded-xl bg-white border-none focus:ring-2 focus:ring-orange-300 outline-none shadow-sm text-gray-700"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-sm font-bold mb-2 ml-2">Email</label>
+            <input
+              type="email"
+              placeholder="email@kamu.com"
+              class="w-full px-6 py-4 rounded-xl bg-white border-none focus:ring-2 focus:ring-orange-300 outline-none shadow-sm text-gray-700"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-bold mb-2 ml-2">Pesan</label>
+            <textarea
+              rows="4"
+              placeholder="Tulis pesanmu di sini..."
+              class="w-full px-6 py-4 rounded-xl bg-white border-none focus:ring-2 focus:ring-orange-300 outline-none shadow-sm text-gray-700 resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="button"
+            class="w-full bg-bakery-dark text-white font-bold py-4 rounded-xl hover:bg-orange-600 transition shadow-lg transform hover:-translate-y-1"
+          >
+            Kirim Pesan 🚀
+          </button>
+        </form>
+      </div>
+    </section>
+    <!--contact end-->
+
+    <footer class="text-center py-10 text-gray-500 text-sm">
+      &copy; 2025 Rollin Bakery. Made with ❤️ via Gemini.
+    </footer>
+    <script src="test.js"></script>
+  </body>
+</html>
