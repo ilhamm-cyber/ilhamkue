@@ -215,9 +215,7 @@
             <p class="text-gray-600">
                 Pilihan terfavorit yang paling dicintai pelanggan kami.
             </p>
-            <button id="open-add-product-modal" class="mt-6 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition transform hover:scale-105">
-                + Tambah Produk Baru
-            </button>
+            
         </div>
 
         <div id="product-list" class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -426,38 +424,7 @@
     <footer class="text-center py-10 text-gray-500 text-sm">
         &copy; 2025 Rollin Bakery. Made with ilhamaris.
     </footer>
-    <!-- Modal Tambah Produk -->
-    <div id="add-product-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex-col items-center justify-center p-4">
-        <div class="bg-white rounded-3xl p-8 w-full max-w-md mx-auto shadow-2xl relative">
-            <button id="close-add-product-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-500 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-6 text-bakery-dark">Tambah Produk Baru</h2>
-            <form id="add-product-form" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-bold mb-1 text-bakery-dark">Nama Produk</label>
-                    <input type="text" id="product-name" required class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-300 outline-none" placeholder="Contoh: Roti Sobek" />
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-1 text-bakery-dark">Harga</label>
-                    <input type="text" id="product-price" required class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-300 outline-none" placeholder="Contoh: Rp 15.000" />
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-1 text-bakery-dark">Deskripsi Singkat</label>
-                    <input type="text" id="product-desc" required class="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-orange-300 outline-none" placeholder="Contoh: Manis dan lembut" />
-                </div>
-                <div>
-                    <label class="block text-sm font-bold mb-1 text-bakery-dark">Foto Produk</label>
-                    <input type="file" id="product-image" accept="image/*" required class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100" />
-                </div>
-                <button type="submit" class="w-full bg-bakery-dark text-white font-bold py-3 rounded-xl hover:bg-orange-600 transition shadow-lg mt-4">
-                    Simpan Produk
-                </button>
-            </form>
-        </div>
-    </div>
+    
 
     <script src="test.js"></script>
 </body>
